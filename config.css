@@ -1,0 +1,38 @@
+.dark h2{
+  color: black;
+}
+.dark h3{
+  color: black;
+}
+.dark span{
+  color: black;
+}
+.dark a{
+  color: #6441A4;
+}
+.dark a:hover{
+  color: #72ff72;
+}
+.dark a:visited{
+  color: #ff6347;
+}
+
+
+.light h2{
+  color: white;
+}
+.light h3{
+  color: white;
+}
+.light span{
+  color: white;
+}
+.light a{
+  color: #6441A4;
+}
+.light a:hover{
+  color: #72ff72;
+}
+.light a:visited{
+  color: #ff6347;
+}

@@ -1,0 +1,44 @@
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  background-color: #53fc53;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 6px 0 #03bc03,;
+  box-shadow: 0 6px 0 #03bc03;
+  color: #141905;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  outline: none;
+  padding: 10px 20px;
+  text-shadow: 0 1px 0 #95ff95;
+  -webkit-transition: all 0.25s cubic-bezier(0.34, 1.04, 0.31, 2.63), background-color 0.125s linear, text-shadow 0.2s linear;
+  -moz-transition: all 0.25s cubic-bezier(0.34, 1.04, 0.31, 2.63), background-color 0.125s linear, text-shadow 0.2s linear;
+  -o-transition: all 0.25s cubic-bezier(0.34, 1.04, 0.31, 2.63), background-color 0.125s linear, text-shadow 0.2s linear;
+  -ms-transition: all 0.25s cubic-bezier(0.34, 1.04, 0.31, 2.63), background-color 0.125s linear, text-shadow 0.2s linear;
+  transition: all 0.25s cubic-bezier(0.34, 1.04, 0.31, 2.63), background-color 0.125s linear, text-shadow 0.2s linear;
+}
+
+.btn:active {
+  background-color: #53fc53;
+  -webkit-box-shadow: 0 1px 0 #03bc03;
+  box-shadow: 0 1px 0 #03bc03;
+  margin-bottom: -5px;
+  margin-top: 20px;
+  text-shadow: 0 1px 0 #95ff95;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
