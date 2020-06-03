@@ -52,9 +52,10 @@ twitch.onAuthorized(function(auth) {
 });
 
 ///////////////////////////
-
 function localUpdateLine(amount) {
     $(".progress .water").css("top", 100 - amount + "%");
+
+    percentUpdate(top);
 }
 
 function listenBroadcast(){
@@ -63,26 +64,44 @@ function listenBroadcast(){
     });
 }
 
+///
+
 var uiFeedbackStarted = false;
 function uiFeedback() {
     if(!uiFeedbackStarted){
         uiFeedbackStarted = true;
-        $("#wr").append('<div id="one" class="slide-bottom"></div>');
-        $.ajax(
-            setTimeout(function() {
+        $("#inner").append('<div id="one" class="waterdrop-one"></div>');
+        var random = randomInteger(30, 70);
+        $('.waterdrop-one').css('left', random+'%').addClass('waterdrop-one-animation');
+
+        setTimeout(function() {
                 $('#one').remove();
                 uiFeedbackStarted = false;
             }, 1000)
-        );
     }
 }
 
+function percentUpdate(){
+    var top = $("#water")[0].style.top;
+    $('#percent').text((100 - parseFloat(top).toFixed(2)) + '%');
+}
+
+///
+
 $(function() {    
     $('#toxic').click(function() {
+        console.log("click")
         if(!token) {return console.log('Not autorized!');}
+
         uiFeedback();
+
         $.ajax(requests.set);
     });
-
     listenBroadcast();
 });
+
+function randomInteger(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+}
+

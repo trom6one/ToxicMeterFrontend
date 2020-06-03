@@ -7,7 +7,7 @@ body {
   /* background-color: #1a1a1a; */
   font-family: page-font;
   font-size: 15px;
-  color: #ccc;
+  /* color: #ccc; */
   
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -56,7 +56,7 @@ body {
 .green .progress .inner {
   position: absolute;
   overflow: hidden;
-  z-index: 2;
+  /* z-index: 2; */
   border-radius: 50%;
 }
 .green .progress .inner {
@@ -87,9 +87,10 @@ body {
   animation-name: spin;
 }
 .green .progress .inner .water {
-  top: 25%;
+  top: 100%;
 }
 .green .progress .inner .water {
+  background-color: #72ff72;
   background: #72ff72;
 }
 .green .progress .inner .water {
@@ -130,6 +131,28 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .btn {
   /* box-shadow: 0 0 15px 0 #03bc03;
   box-shadow: 0 0 15px 0 #53fc53ad, 0 6px 0 2px #03bc03; */
@@ -166,10 +189,21 @@ body {
   transition-timing-function: ease;
 }
 
-.slide-bottom {
+
+
+
+
+
+
+
+
+
+
+
+
+.waterdrop-one {
   position: relative;
-  top: -15px;
-  left: 48%;
+  top: -50%;
   width: 20px;
   height: 20px;
   background-color: #72ff72;
@@ -181,12 +215,15 @@ body {
   border-top-right-radius: 75px;
   border-bottom-right-radius: 75px;
   border-bottom-left-radius: 75px;
-
-	-webkit-animation: slide-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  z-index: 555;
 }
 
-@-webkit-keyframes slide-bottom {
+.waterdrop-one-animation{
+  -webkit-animation: kf-waterdrop-one 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: kf-waterdrop-one 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes kf-waterdrop-one {
   0% {
     -webkit-transform: scale(0.1) translateY(0px) rotate(30deg);
             transform: scale(0.1) translateY(0px) rotate(30deg);
@@ -233,7 +270,7 @@ body {
   }
 }
 
-@keyframes slide-bottom {
+@keyframes kf-waterdrop-one {
   0% {
     -webkit-transform: scale(0.1) translateY(0px) rotate(30deg);
             transform: scale(0.1) translateY(0px) rotate(30deg);
@@ -278,4 +315,25 @@ body {
     -webkit-transform: scale(1.0) translateY(200px) rotate(45deg);
             transform: scale(1.0) translateY(200px) rotate(45deg);
   }
+}
+
+
+
+
+
+
+#percent{
+  position: relative;
+  top: 35%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #74ff74;
+  z-index: 666;
+  mix-blend-mode: color-dodge;
+  /* 83e083 */
+}
+
+.disp-none{
+  display: none;
 }

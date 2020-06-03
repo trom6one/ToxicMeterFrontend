@@ -103,3 +103,8 @@ dist
 # TernJS port file
 .tern-port
 ToxicMeterFrontend.zip
+index.js
+package-lock.json
+package.json
+server.cert
+server.key
