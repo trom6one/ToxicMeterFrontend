@@ -14,6 +14,17 @@
     <p style="color: red;">Test version 0.0.3</p>
     <div class="wrapper">
         <div id="green" class="green">
+          <div id="panel-top">
+            <div id="button-toxic">
+              <span>TOXIC</span>
+            </div>
+          </div>
+          <div id="panel-right">
+            <div id="button-help">
+              <span>?</span>
+            </div>
+          </div>
+
           <div class="progress">
             <div id="inner" class="inner">
               <div id="percent">0%</div>
@@ -21,12 +32,17 @@
             </div>
           </div>
         </div>
-        <div class="btnwrapper">
-          <div class="btndiv">
-            <!-- <button class="btn" type="button" id="toxic" disabled>TOXIC</button> -->
-            <button class="btn" type="button" id="toxic">TOXIC</button>
+
+        <div id="panel-bottom">
+          <div id="button-untoxic">
+            <span>unTOXIC</span>
           </div>
         </div>
+        <!-- <div class="btnwrapper">
+          <div class="btndiv" style="position: relative; z-index: 1">
+            <button class="btn" type="button" id="toxic">TOXIC</button>
+          </div>
+        </div> -->
     </div>
 </body>
 </html>
