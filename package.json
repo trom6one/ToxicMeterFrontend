@@ -1,0 +1,22 @@
+{
+  "name": "toxicmeterfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trom6one/ToxicMeterFrontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trom6one/ToxicMeterFrontend/issues"
+  },
+  "homepage": "https://github.com/trom6one/ToxicMeterFrontend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
