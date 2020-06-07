@@ -58,14 +58,12 @@ twitch.onAuthorized(function(auth) {
 
 ///////////////////////////
 function localUpdateLine(amount) {
-    $(".progress .water").css("top", 100 - amount + "%");
-    // $(".progress .water").animate({ top: 100 - amount + "%" }, 'easeInOutCubic', function(){ 
-    //     /* animation comlete */ 
-    // });
 
-    // % text
+    $(".progress .water").css("top", 100 - amount + "%");
+
     var top = $("#water")[0].style.top;
     $('#percent').text((100 - parseFloat(top)).toFixed(1) + '%');
+    $("#water").css("opacity", (parseFloat(top)/2).toFixed(1) + "%");
 }
 
 function listenBroadcast(){
@@ -83,7 +81,6 @@ function uiFeedback() {
         $("#inner").append('<div id="one" class="waterdrop-one"></div>');
         var random = randomInteger(30, 70);
         $('.waterdrop-one').css('left', random+'%').addClass('waterdrop-one-animation');
-
         setTimeout(function() {
                 $('#one').remove();
                 uiFeedbackStarted = false;
@@ -95,6 +92,9 @@ function uiFeedback() {
 ///
 
 $(function() {    
+    
+    var green = $("#green");
+
     // $('#panel-right').click(function() {
     //     if($('#panel-right').hasClass("panel-right-closed")){
     //         $('#panel-right').removeClass('panel-right-closed');
@@ -104,17 +104,19 @@ $(function() {
     //     }
     // });   
 
-    $("#button-help").click(function() {
-        var language = twitch.onContext(function(context) {return context.language });
-        console.log(`language = ${language}`);
-        var url = language == "ru" ? helpUrlRus : helpUrlEng;
-        console.log(`url = ${url}`);
-        window.open(url, "_blank");
-    });
+    // $("#button-help").click(function() {
+    //     var language = twitch.onContext(function(context) {return context.language });
+    //     console.log(`language = ${language}`);
+    //     var url = language == "ru" ? helpUrlRus : helpUrlEng;
+    //     console.log(`url = ${url}`);
+    //     window.open(url, "_blank");
+    // });
 
     $('#button-toxic').click(function() {
         // console.log("click")
-        if(!token) {return console.log('Not autorized!');}
+        // if(!token) {return console.log('Not autorized!');}
+
+        console.log('#button-toxic');
 
         uiFeedback();
 
@@ -128,11 +130,99 @@ $(function() {
         $.ajax(requests.setMinus);
     });
 
+    // NOTE Добавляем класс, чтобы уменьшить круг
+    // BUG Если класс заранее добавлен в HTML, "жидкость" размыта
+    // $("#green").addClass("small");
+    //
+    $('#button-size').click(function() {
+        //if(!token) {return console.log('Not autorized!');}
+        green.addClass("small");
+    });
+
+    $('#button-hide').click(function() {
+        console.log("#button-hide click");
+        //if(!token) {return console.log('Not autorized!');}
+        green.addClass("hide");
+        green.addClass("small");
+    });
+
+    $('#app').click(function() {
+        console.log("#button-hide click");
+        //if(!token) {return console.log('Not autorized!');}
+        var a =  $('#app');
+        if(a.hasClass('black')){
+            a.removeClass('black');
+            a.addClass('red');
+        }
+        else{
+            a.removeClass('red');
+            a.addClass('black');
+        }
+    });
+
     listenBroadcast();
+
+    moveHandler();
 });
+
+async function moveHandler(){
+    var mousePosition;
+    var offsetDragable = [0,0];
+    var clientOrigin = [0,0];
+    var isDown = false;
+
+    var dragable = document.getElementById("green");
+    var green = $("#green");
+
+    dragable.addEventListener('mousedown', function(e) {
+        isDown = true;
+        offsetDragable = [
+            dragable.offsetLeft - e.clientX,
+            dragable.offsetTop - e.clientY
+        ];
+        clientOrigin = [
+            e.clientX,
+            e.clientY
+        ];
+        green.removeClass("grab");
+        green.addClass("grabbing");
+    }, true);
+    
+    document.addEventListener('mouseup', function(e) {
+        isDown = false;
+        green.removeClass("grabbing");
+        green.addClass("grab");
+
+        var xDiff = Math.abs(clientOrigin[0]) - Math.abs(e.clientX);
+        var yDiff = Math.abs(clientOrigin[1]) - Math.abs(e.clientY);
+
+        if((Math.abs(xDiff) < 2 || Math.abs(yDiff) < 2)){
+            green.removeClass("hide");
+            green.removeClass("small");
+        }
+    }, true);
+    
+    document.addEventListener('mousemove', function(event) {
+        event.preventDefault();
+        if (isDown) {
+            mousePosition = {
+                x : event.clientX,
+                y : event.clientY
+            };
+            dragable.style.left = (mousePosition.x + offsetDragable[0]) + 'px';
+            dragable.style.top  = (mousePosition.y + offsetDragable[1]) + 'px';
+        }
+    }, true);
+}
 
 function randomInteger(min, max) {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }
+
+
+
+
+
+
 
