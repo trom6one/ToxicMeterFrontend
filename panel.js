@@ -59,11 +59,16 @@ twitch.onAuthorized(function(auth) {
 ///////////////////////////
 function localUpdateLine(amount) {
 
-    $(".progress .water").css("top", 100 - amount + "%");
+    // $(".progress .water").css("top", 100 - (amount*2) + "%");
+    $(".progress .water").animate({ top: 100 - amount + "%"}, 'easeInOutCubic', function(){ 
+        /* animation comlete */ 
+    });
 
+    //
     var top = $("#water")[0].style.top;
     $('#percent').text((100 - parseFloat(top)).toFixed(1) + '%');
-    $("#water").css("opacity", (parseFloat(top)/2).toFixed(1) + "%");
+    //
+    $("#water").css("opacity", (100 - parseFloat(top)/2).toFixed(1) + "%");
 }
 
 function listenBroadcast(){
@@ -123,10 +128,10 @@ $(function() {
         $.ajax(requests.setPlus);
     });
 
-    $('#button-untoxic').click(function() {
+    $('#button-detoxic').click(function() {
         // console.log("click")
-        if(!token) {return console.log('Not autorized!');}
-
+        // if(!token) {return console.log('Not autorized!');}
+        
         $.ajax(requests.setMinus);
     });
 
@@ -134,7 +139,7 @@ $(function() {
     // BUG Если класс заранее добавлен в HTML, "жидкость" размыта
     // $("#green").addClass("small");
     //
-    $('#button-size').click(function() {
+    $('#button-minimize').click(function() {
         //if(!token) {return console.log('Not autorized!');}
         green.addClass("small");
     });
@@ -146,18 +151,9 @@ $(function() {
         green.addClass("small");
     });
 
-    $('#app').click(function() {
-        console.log("#button-hide click");
-        //if(!token) {return console.log('Not autorized!');}
-        var a =  $('#app');
-        if(a.hasClass('black')){
-            a.removeClass('black');
-            a.addClass('red');
-        }
-        else{
-            a.removeClass('red');
-            a.addClass('black');
-        }
+    $('#button-feedback').click(function() {
+        // if(!token) {return console.log('Not autorized!');}
+        window.open('https://forms.gle/58P1eFv2PRDmz1PVA', '_blank');
     });
 
     listenBroadcast();

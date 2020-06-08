@@ -48,7 +48,7 @@ body {
   height: 220px;
   float: right;
   right: 100px;
-  top:100px;
+  top:150px;
 }
 
 .green.grab:hover{
@@ -109,11 +109,31 @@ body {
 }
 
 .green .progress .inner .water {
-  /* TODO Регулировать opcaity или background-color */
   top: 100%;
   background-color: #72ff72;
   opacity: 50%;
 }
+
+
+/* #green.small{
+  transform: scale(0.3);
+  transition: transform 0.15s;
+  opacity: 25%;
+}
+
+#green.small:hover{
+  transform: opacity(100%);
+  transition: transform 0.15s;
+  opacity: 100%;
+} */
+
+
+
+
+
+
+
+
 
 @-webkit-keyframes spin {
   from {
@@ -269,7 +289,7 @@ body {
   /* position */
   position: relative;
   z-index: 666;
-  top: 35%;
+  top: 31%;
   /* decoration */
   text-align: center;
   font-size: 50px;
@@ -389,8 +409,10 @@ body {
   width: 15px;
   height: 50px;
   float: right;
-  top: 66px;
-  right: -121px;
+  /* top: 66px;
+  right: -121px; */
+  top: 63px;
+  right: -122px;
   /* decoration */
   outline: none;
   background-color: #53fc53;
@@ -410,8 +432,10 @@ body {
 
 #panel-right:hover{
   /* position */
-  top: 66px;
-  right: -196px;
+  /* top: 66px;
+  right: -196px; */
+  top: 63px;
+  right: -197px;
   width: 90px;
   /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
   transition: none;
@@ -421,7 +445,7 @@ body {
 /* * * * * * * * */
 /* * Кнопка 1 * */
 /* * * * * * * */
-#panel-right #button-size{
+#panel-right #button-minimize{
   /* position */
   position: relative;
   float: left;
@@ -441,23 +465,23 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-right:hover #button-size{
+#panel-right:hover #button-minimize{
   /* position */
   opacity: 100%;
-  left: 0px;
+  left: -1px;
   width: 40px;
   /* decoration */
   border: 0.5px solid #1dd11d;
 }
 
-#panel-right #button-size:active{
+#panel-right #button-minimize:active{
   /* decoration */
   -webkit-box-shadow: 0 6px 0 #1dd11d inset;
   box-shadow: 0 6px 0 #1dd11d inset;
   background-color: #4de94d;
 }
 
-#panel-right #button-size span{
+#panel-right #button-minimize span{
   /* position */
   position: relative;
   top:0px;
@@ -473,12 +497,12 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-right #button-size.zoom-out:hover{
+#panel-right #button-minimize.zoom-out:hover{
   /* decoration */
   cursor: zoom-out;
 }
 
-#panel-right #button-size:active span{
+#panel-right #button-minimize:active span{
   /* position */
   top: 7px;
   /* decoration */
@@ -512,7 +536,7 @@ body {
 
 #panel-right:hover #button-hide{
   /* position */
-  right: -5px;
+  right: -4px;
   width: 40px;
   /* decoration */
   opacity: 100%;
@@ -592,7 +616,7 @@ body {
   margin-bottom: -15px;
 }
 
-#panel-bottom #button-untoxic{
+#panel-bottom #button-detoxic{
   /* position */
   position: relative;
   top: 25%;
@@ -612,7 +636,7 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-bottom:hover #button-untoxic{
+#panel-bottom:hover #button-detoxic{
   /* position */
   top: 18%;
   height: 30px;
@@ -621,14 +645,14 @@ body {
   border: 0.5px solid #1dd11d;
 }
 
-#panel-bottom #button-untoxic:active{
+#panel-bottom #button-detoxic:active{
   /* decoration */
   -webkit-box-shadow: 0 6px 0 #1dd11d inset;
   box-shadow: 0 6px 0 #1dd11d inset;
   background-color: #4de94d;
 }
 
-#panel-bottom #button-untoxic span{
+#panel-bottom #button-detoxic span{
   /* position */
   position: relative;
   top: 0px;
@@ -643,17 +667,246 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-bottom #button-untoxic:hover{
+#panel-bottom #button-detoxic:hover{
   /* decoration */
   cursor: pointer;
 }
 
-#panel-bottom #button-untoxic:active span{
+#panel-bottom #button-detoxic:active span{
   /* position */
   top: 6px;
   /* decoration */
   color: #d6e0da;
   font-size: 20px;
+}
+
+
+
+
+
+/* * Левая панель */
+#panel-left{
+  /* position */
+  position: relative; 
+  z-index: 1;
+  width: 15px;
+  height: 50px;
+  float: left;
+  /* top: 63px;
+  left: -32px; */
+  top: 13px;
+  left: -32px;
+  /* decoration */
+  outline: none;
+  background-color: #53fc53;
+  border: 10px solid #53fc53;
+  border-right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-box-shadow: 0 6px 0 #03bc03,;
+  box-shadow: 0 6px 0 #03bc03;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
+
+#panel-left:hover{
+  /* position */
+  /* top: 63px; */
+  top: 13px;
+  left: -107px;
+  width: 90px;
+  /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
+  transition: none;
+}
+
+
+
+/* * * * * * * * */
+/* * Кнопка 1 * */
+/* * * * * * * */
+#panel-left #button-feedback{
+  /* position */
+  position: relative;
+  float: right;
+  top: -5px;
+  width: 0px;
+  height: 40px;
+  /* decoration */
+  opacity: 0%;
+  text-align: center;
+  border: 0.5px solid #1dd11d00;
+  border-radius: 5px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
+
+#panel-left:hover #button-feedback{
+  /* position */
+  opacity: 100%;
+  right: -1px;
+  width: 40px;
+  /* decoration */
+  border: 0.5px solid #1dd11d;
+}
+
+#panel-left #button-feedback:active{
+  /* decoration */
+  -webkit-box-shadow: 0 6px 0 #1dd11d inset;
+  box-shadow: 0 6px 0 #1dd11d inset;
+  background-color: #4de94d;
+}
+
+#panel-left #button-feedback span{
+  /* position */
+  position: relative;
+  top:0px;
+  /* decoration */
+  color: #f3fdf5;
+  font-weight: bold;
+  font-size: 30px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
+
+#panel-left #button-feedback.zoom-out:hover{
+  /* decoration */
+  cursor: pointer;
+}
+
+#panel-left #button-feedback:active span{
+  /* position */
+  top: 7px;
+  /* decoration */
+  color: #d6e0da;
+  font-size: 28px;
+}
+
+
+/* * * * * * * * */
+/* * Кнопка 2 * */
+/* * * * * * * */
+#panel-left #button-help{
+  /* position */
+  position: relative;
+  float: left;
+  top: -5px;
+  width: 0px;
+  height: 40px;
+  /* decoration */
+  opacity: 0%;
+  text-align: center;
+  border: 0.5px solid #1dd11d00;
+  border-radius: 5px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
+
+#panel-left:hover #button-help{
+  /* position */
+  left: -4px;
+  width: 40px;
+  /* decoration */
+  opacity: 100%;
+  border: 0.5px solid #1dd11d;
+}
+
+#panel-left:hover #button-help:hover{
+  /* decoration */
+  background-color: #0b9216;
+}
+
+#panel-left:hover #button-help:hover span{
+  /* decoration */
+  color: #1dd11d;
+}
+
+#panel-left #button-help:active{
+  /* decoration 
+  -webkit-box-shadow: 0 6px 0 #1dd11d inset;
+  box-shadow: 0 6px 0 #1dd11d inset;
+  background-color: #4de94d;*/
+}
+
+#panel-left #button-help span{
+  /* position */
+  position: relative;
+  top:0px;
+  /* decoration */
+  color: #f3fdf5;
+  font-weight: bold;
+  font-size: 30px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
+
+#panel-left #button-help.zoom-out:hover{
+  /* decoration */
+  cursor: help;
+}
+
+#panel-left #button-help:active span{
+  /* position 
+  top: 7px;*/
+  /* decoration 
+  color: #d6e0da;
+  font-size: 28px;*/
+}
+
+
+
+
+
+/* * Подсказка */
+#popup-help{
+  /* position */
+  position: relative;
+  z-index: 1001;
+  width: 425px;
+  float: right;
+  top: -169px;
+  right: 40px;
+  padding: 10px;
+  margin: 0 auto;
+  /* decoration */
+  background-color: #1a1a1a8c;
+  color: white;
+  border: solid 5px #53fc53;
+  border-radius: 15px;
+  text-align: left;
+  font-size: 14px;
+  display: none;
+  opacity: 0%;
+  /* animation */
+  -webkit-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+}
+
+#button-help:hover #popup-help{
+  display: inline-block;
+  opacity: 90%;
 }
 
 
@@ -673,11 +926,6 @@ body {
   /* background-color: #e5ff004f; */
   border-radius: 50%;
 }
-
-
-
-
-
 
 
 
@@ -719,6 +967,19 @@ body {
   display: none;
 }
 
+#green.small #panel-left{
+  display: none;
+}
+
+#green.small #panel-right #button-minimize{
+  display: none;
+}
+
+#green.small #panel-right:hover{
+  right: -66px;
+  width: 50px;
+}
+
 #green.small #percent{
   opacity: 0%;
 }
@@ -754,29 +1015,18 @@ body {
 
 
 
-/* Прозрачность воды */
-/* unToxic - пар */
 
 
 
 
-#app{
-  position: absolute;
-  float: right;
-  top: 0px;
-  right: 0px;
-  height: 500px;
-  width: 500px;
-  margin: 0 auto;
-}
 
-#app.red{
-  background: red;
-}
 
-#app.black{
-  background: #1a1a1a;
-}
+
+
+
+
+
+
 
 
 
