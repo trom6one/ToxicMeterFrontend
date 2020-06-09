@@ -8,7 +8,7 @@ body {
   bottom: 0px;
   height: 100%;
 
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   -moz-user-select: none;
   -khtml-user-select: none;
   user-select: none;
@@ -47,18 +47,8 @@ body {
   width: 220px;
   height: 220px;
   float: right;
-  right: 100px;
-  top:150px;
-}
-
-.green.grab:hover{
-  /* decoration */
-  cursor: grab;
-}
-
-.green.grabbing:hover{
-  /* decoration */
-  cursor: grabbing;
+  top: 35px;
+  right: 49px;
 }
 
 .green .progress {
@@ -435,8 +425,8 @@ body {
   /* top: 66px;
   right: -196px; */
   top: 63px;
-  right: -197px;
-  width: 90px;
+  right: -157px;
+  width: 50px;
   /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
   transition: none;
 }
@@ -445,7 +435,7 @@ body {
 /* * * * * * * * */
 /* * Кнопка 1 * */
 /* * * * * * * */
-#panel-right #button-minimize{
+#panel-right #button-info{
   /* position */
   position: relative;
   float: left;
@@ -465,7 +455,7 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-right:hover #button-minimize{
+#panel-right:hover #button-info{
   /* position */
   opacity: 100%;
   left: -1px;
@@ -474,14 +464,14 @@ body {
   border: 0.5px solid #1dd11d;
 }
 
-#panel-right #button-minimize:active{
+#panel-right #button-info:active{
   /* decoration */
   -webkit-box-shadow: 0 6px 0 #1dd11d inset;
   box-shadow: 0 6px 0 #1dd11d inset;
   background-color: #4de94d;
 }
 
-#panel-right #button-minimize span{
+#panel-right #button-info span{
   /* position */
   position: relative;
   top:0px;
@@ -497,12 +487,12 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-right #button-minimize.zoom-out:hover{
+#panel-right #button-info:hover{
   /* decoration */
-  cursor: zoom-out;
+  cursor: pointer
 }
 
-#panel-right #button-minimize:active span{
+#panel-right #button-info:active span{
   /* position */
   top: 7px;
   /* decoration */
@@ -510,74 +500,6 @@ body {
   font-size: 28px;
 }
 
-
-/* * * * * * * * */
-/* * Кнопка 2 * */
-/* * * * * * * */
-#panel-right #button-hide{
-  /* position */
-  position: relative;
-  float: right;
-  top: -5px;
-  width: 0px;
-  height: 40px;
-  /* decoration */
-  opacity: 0%;
-  text-align: center;
-  border: 0.5px solid #1dd11d00;
-  border-radius: 5px;
-  /* animation */
-  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-}
-
-#panel-right:hover #button-hide{
-  /* position */
-  right: -4px;
-  width: 40px;
-  /* decoration */
-  opacity: 100%;
-  border: 0.5px solid #1dd11d;
-}
-
-#panel-right #button-hide:active{
-  /* decoration */
-  -webkit-box-shadow: 0 6px 0 #1dd11d inset;
-  box-shadow: 0 6px 0 #1dd11d inset;
-  background-color: #4de94d;
-}
-
-#panel-right #button-hide span{
-  /* position */
-  position: relative;
-  top:0px;
-  /* decoration */
-  color: #f3fdf5;
-  font-weight: bold;
-  font-size: 30px;
-  /* animation */
-  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-}
-
-#panel-right #button-hide.zoom-out:hover{
-  /* decoration */
-  cursor: zoom-out;
-}
-
-#panel-right #button-hide:active span{
-  /* position */
-  top: 7px;
-  /* decoration */
-  color: #d6e0da;
-  font-size: 28px;
-}
 
 
 
@@ -717,8 +639,8 @@ body {
   /* position */
   /* top: 63px; */
   top: 13px;
-  left: -107px;
-  width: 90px;
+  left: -67px;
+  width: 50px;
   /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
   transition: none;
 }
@@ -780,7 +702,7 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-left #button-feedback.zoom-out:hover{
+#panel-left #button-feedback:hover{
   /* decoration */
   cursor: pointer;
 }
@@ -794,122 +716,6 @@ body {
 }
 
 
-/* * * * * * * * */
-/* * Кнопка 2 * */
-/* * * * * * * */
-#panel-left #button-help{
-  /* position */
-  position: relative;
-  float: left;
-  top: -5px;
-  width: 0px;
-  height: 40px;
-  /* decoration */
-  opacity: 0%;
-  text-align: center;
-  border: 0.5px solid #1dd11d00;
-  border-radius: 5px;
-  /* animation */
-  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-}
-
-#panel-left:hover #button-help{
-  /* position */
-  left: -4px;
-  width: 40px;
-  /* decoration */
-  opacity: 100%;
-  border: 0.5px solid #1dd11d;
-}
-
-#panel-left:hover #button-help:hover{
-  /* decoration */
-  background-color: #0b9216;
-}
-
-#panel-left:hover #button-help:hover span{
-  /* decoration */
-  color: #1dd11d;
-}
-
-#panel-left #button-help:active{
-  /* decoration 
-  -webkit-box-shadow: 0 6px 0 #1dd11d inset;
-  box-shadow: 0 6px 0 #1dd11d inset;
-  background-color: #4de94d;*/
-}
-
-#panel-left #button-help span{
-  /* position */
-  position: relative;
-  top:0px;
-  /* decoration */
-  color: #f3fdf5;
-  font-weight: bold;
-  font-size: 30px;
-  /* animation */
-  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
-}
-
-#panel-left #button-help.zoom-out:hover{
-  /* decoration */
-  cursor: help;
-}
-
-#panel-left #button-help:active span{
-  /* position 
-  top: 7px;*/
-  /* decoration 
-  color: #d6e0da;
-  font-size: 28px;*/
-}
-
-
-
-
-
-/* * Подсказка */
-#popup-help{
-  /* position */
-  position: relative;
-  z-index: 1001;
-  width: 425px;
-  float: right;
-  top: -169px;
-  right: 40px;
-  padding: 10px;
-  margin: 0 auto;
-  /* decoration */
-  background-color: #1a1a1a8c;
-  color: white;
-  border: solid 5px #53fc53;
-  border-radius: 15px;
-  text-align: left;
-  font-size: 14px;
-  display: none;
-  opacity: 0%;
-  /* animation */
-  -webkit-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
-  -moz-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
-  -o-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
-  -ms-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
-  transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
-}
-
-#button-help:hover #popup-help{
-  display: inline-block;
-  opacity: 90%;
-}
-
-
 
 
 
@@ -917,7 +723,7 @@ body {
 #button-holder{
   /* position */
   position: relative;
-  z-index: 777;
+  z-index: 99;
   top: -90%;
   height: 180px;
   width: 180px;
@@ -926,109 +732,3 @@ body {
   /* background-color: #e5ff004f; */
   border-radius: 50%;
 }
-
-
-
-
-
-/* * Уменьшение-Увеличение */
-#green {
-  /* animation */
-  transition: transform 0.15s;
-}
-
-#green.small{
-  transform: scale(0.3);
-  transition: transform 0.15s;
-  opacity: 25%;
-}
-
-#green.small:hover{
-  transform: opacity(100%);
-  transition: transform 0.15s;
-  opacity: 100%;
-}
-
-#green.small #panel-top{
-  display: none;
-}
-
-#green.small #panel-right{
-  right: -31px;
-  /* NOTE Нужно, чтобы не ломалась анимация панели, при уменьшении*/
-  transition: transform 0s;
-}
-
-#green.small #panel-right:hover{
-  right: -106px;
-}
-
-#green.small #panel-bottom{
-  display: none;
-}
-
-#green.small #panel-left{
-  display: none;
-}
-
-#green.small #panel-right #button-minimize{
-  display: none;
-}
-
-#green.small #panel-right:hover{
-  right: -66px;
-  width: 50px;
-}
-
-#green.small #percent{
-  opacity: 0%;
-}
-
-
-
-
-
-
-
-
-/* * Скрытие*/
-#green {
-  /* animation */
-  transition: transform 0.15s;
-}
-
-#green.hide{
-  transform: scale(0.1);
-  opacity: 15%;
-  /* pointer-events: none; */
-}
-
-#green.hide #panel-right{
-  display: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
