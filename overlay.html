@@ -3,7 +3,7 @@
 <head>
     <title>Viewer Page</title>
     <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="panel.css">
+    <link rel="stylesheet" type="text/css" href="overlay.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> -->
 </head>
 <body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
@@ -11,23 +11,21 @@
 
     <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
     <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="panel.js" type="text/javascript"></script>
+    <script src="overlay.js" type="text/javascript"></script>
     
     <div id="green" class="green grab" title="Hold to move.&#10;Click to return size.">
 
       <div class="progress">
         <div id="inner" class="inner">
-          <div id="percent">0%</div>
+          <div id="percent">0.0%</div>
           <div id="water" class="water"></div>
         </div>
       </div>
       
-
-
       <div id="button-holder">
 
         <div id="panel-top">
-          <div id="button-toxic" class="button" title="Click\Hold to increase toxicity.">
+          <div id="button-toxic" class="button" title="Click to increase toxicity.">
             <span>toxic</span>
           </div>
         </div>
@@ -42,36 +40,14 @@
         </div>
         
         <div id="panel-bottom">
-          <div id="button-detoxic" class="button" title="Click\Hold to decrease toxicity.">
-            <span>detoxic</span>
+          <div id="button-detox" class="button" title="Click to decrease toxicity.">
+            <span>detox</span>
           </div>
         </div>
 
         <div id="panel-left">
-          <div id="button-info" class="button zoom-out" title="Hover to open info.">
-            <span>?</span>
-            <div id="popup-info">
-              <p>
-                Buttons:<br>
-                TOXIC - Сlick to increase toxicity (1/s).<br>
-                DETOXIC - Сlick to decrease toxicity (1/s).<br>
-                M - Click for minimize ToxicMeter.<br>
-                H - Click for hide ToxicMeter (super-minimize).<br>
-                F - Click for open feedback page in new browser tab.<br>
-                <br>
-                Common:<br>
-                Click on any place in ToxicMeter for return to original size.<br>
-                Hold on any place in ToxicMeter for move it.<br>
-                <br>
-                Unsolvable problems:<br>
-                Double or multi clicks trigger fullscreen opening stream window.<br>
-                <br>
-                Temporal problems:<br>
-                After dragging and dropping, the extension position <br>
-                does not automatically adjust to the size of the window <br>
-                and may hide behind the edge of the screen.
-              </p>
-            </div>
+          <div id="button-info" class="button zoom-out" title="Click to open info page.">
+            <span>i</span>
           </div>
           <div id="button-feedback" class="button zoom-out" title="Click to open feedback page.">
             <span>f</span>

@@ -1,10 +1,9 @@
 var token = "";
 var tuid = "";
-var ebs = "";
+const ebs = "toxicmeter.herokuapp.com";
 
-const helpUrlEng = "https://docs.google.com/document/d/e/2PACX-1vQxQnaIyGGyFOVftRG6Mfoj85xxV8N3r_4pkpBYeMTnx8YJKU1ZscnKduDM5lE40ULuk3FckTbTc5ft/pub"
-const helpUrlRus = "https://docs.google.com/document/d/e/2PACX-1vQr3kGqHZKu7YCSZ40TybkN1rhRec6xKMYwaP0XXKNqDvyGI4RFLpOYozJzXaASzYDAG0i13UYBGoTz/pub"
-
+const infoPageUrl = "https://docs.google.com/document/d/e/2PACX-1vQxQnaIyGGyFOVftRG6Mfoj85xxV8N3r_4pkpBYeMTnx8YJKU1ZscnKduDM5lE40ULuk3FckTbTc5ft/pub";
+const feedbackFormUrl = "https://forms.gle/58P1eFv2PRDmz1PVA";
 
 // because who wants to type this every time?
 var twitch = window.Twitch.ext;
@@ -19,7 +18,8 @@ var requests = {
 function postRequest(type, method) {
     return {
         type: type,
-        url: location.protocol + '//toxicmeter.herokuapp.com/fill/' + method,
+        // url: location.protocol + '//toxicmeterdev.herokuapp.com/fill/' + method,
+        url: `${location.protocol}//${ebs}/fill/${method}`,
     }
 }
 
@@ -29,7 +29,8 @@ function getRequest(type, method) {
         dataType: 'text',
         data: '',
         async: false,
-        url: location.protocol + '//toxicmeter.herokuapp.com/fill/' + method,
+        // url: location.protocol + '//toxicmeterdev.herokuapp.com/fill/' + method,
+        url: `${location.protocol}//${ebs}/fill/${method}`,
         success: function (res) {
             data = res;
             localUpdateLine(data);
@@ -48,33 +49,27 @@ twitch.onAuthorized(function(auth) {
     token = auth.token;
     tuid = auth.userId;
 
-    // enable the button
-    $('#button-toxic').removeAttr('disabled');
-
     setAuth(token);
     
     $.ajax(requests.get);
 });
 
-///////////////////////////
-function localUpdateLine(amount) {
+///
 
-    // $(".progress .water").css("top", 100 - (amount*2) + "%");
-    $(".progress .water").animate({ top: (100 - amount * 5) + "%"}, 'easeInOutCubic', function(){ 
+function localUpdateLine(amount) {
+    $('#percent').text(parseFloat(amount).toFixed(1) + '%');
+
+    $("#water").css("opacity", (40.0 + parseFloat(amount)).toFixed(1) + "%");
+
+    $(".progress .water").animate({ top: 100 - amount + "%"}, 'easeInOutCubic', function(){ 
         /* animation comlete */ 
     });
-
-    //
-    var top = $("#water")[0].style.top;
-    $('#percent').text((100 - parseFloat(top)).toFixed(1) + '%');
-    //
-    $("#water").css("opacity", (100 - parseFloat(top)/2).toFixed(1) + "%");
 }
 
 function listenBroadcast(){
-    // twitch.listen('broadcast', function (target, contentType, currentAmount) {
-    //     localUpdateLine(currentAmount);
-    // });
+    twitch.listen('broadcast', function (target, contentType, currentAmount) {
+        localUpdateLine(currentAmount);
+    });
 }
 
 ///
@@ -93,36 +88,27 @@ function uiFeedback() {
     }
 }
 
-
-///
-
 $(function() {    
-    var green = $("#green");
 
     $('#button-toxic').click(function() {
-        // console.log("click")
-        // if(!token) {return console.log('Not autorized!');}
-
+        if(!token) {return console.log('Not autorized!');}
         uiFeedback();
-
         $.ajax(requests.setPlus);
     });
 
-    $('#button-detoxic').click(function() {
-        // console.log("click")
-        // if(!token) {return console.log('Not autorized!');}
-        
+    $('#button-detox').click(function() {
+        if(!token) {return console.log('Not autorized!');}
         $.ajax(requests.setMinus);
     });
 
     $('#button-feedback').click(function() {
-        // if(!token) {return console.log('Not autorized!');}
-        window.open('https://forms.gle/58P1eFv2PRDmz1PVA', '_blank');
+        if(!token) {return console.log('Not autorized!');}
+        window.open(feedbackFormUrl, '_blank');
     });
 
     $('#button-info').click(function() {
-        // if(!token) {return console.log('Not autorized!');}
-        window.open('https://forms.gle/58P1eFv2PRDmz1PVA', '_blank');
+        if(!token) {return console.log('Not autorized!');}
+        window.open(infoPageUrl, '_blank');
     });
 
     listenBroadcast();

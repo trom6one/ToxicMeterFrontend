@@ -2,6 +2,9 @@ var token = "";
 var tuid = "";
 var ebs = "";
 
+const infoPageUrl = "https://docs.google.com/document/d/e/2PACX-1vQxQnaIyGGyFOVftRG6Mfoj85xxV8N3r_4pkpBYeMTnx8YJKU1ZscnKduDM5lE40ULuk3FckTbTc5ft/pub";
+const feedbackFormUrl = "https://forms.gle/58P1eFv2PRDmz1PVA";
+
 var twitch = window.Twitch.ext;
 let channelId = "";
 
@@ -44,7 +47,7 @@ twitch.onAuthorized(function(auth) {
     $.ajax(requests.get);
 });
 
-///////////////////////////
+///
 
 $(function() {
     $('#getObsOverlay').click(function() {
@@ -52,8 +55,6 @@ $(function() {
 
         window.open(`https://toxicmeter.herokuapp.com/obs-overlay.html?channel=${channelId}`, '_blank');
     });
-
-
 
     $('#botActivate').click(function() {
         if(!token) {return console.log('Not autorized!');}
@@ -80,7 +81,7 @@ $(function() {
     $('#botDeactivate').click(function() {
         if(!token) {return console.log('Not autorized!');}
 
-        window.open('https://forms.gle/58P1eFv2PRDmz1PVA', '_blank');
+        window.open('', '_blank');
     });
 
     $('#botConfig').click(function() {
@@ -88,11 +89,13 @@ $(function() {
         window.open(`https://toxicmeterbot.herokuapp.com/config.html?channel=${channelId}`, '_blank');
     });
 
-
-
-    $('#getFeedbackPage').click(function() {
+    $('#button-feedback').click(function() {
         if(!token) {return console.log('Not autorized!');}
+        window.open(feedbackFormUrl, '_blank');
+    });
 
-        window.open('https://forms.gle/58P1eFv2PRDmz1PVA', '_blank');
+    $('#button-info').click(function() {
+        if(!token) {return console.log('Not autorized!');}
+        window.open(infoPageUrl, '_blank');
     });
 });

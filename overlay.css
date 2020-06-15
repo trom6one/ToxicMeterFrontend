@@ -1,4 +1,3 @@
-
 html, 
 body {
   position: absolute;
@@ -7,28 +6,23 @@ body {
   right: 0px;
   bottom: 0px;
   height: 100%;
-
   /* background-color: #1a1a1a; */
   -moz-user-select: none;
   -khtml-user-select: none;
   user-select: none;
 }
 
-
-
-
-
-/* * Font */
+/* * * * * * */
+/* * Font * */
+/* * * * * */
 @font-face {
   font-family: "Bebas Neue";
-  src:url("/BebasNeue-Regular.ttf");
+  src:url("BebasNeue-Regular.ttf");
 }
 
-
-
-
-
-/* * Текст кнопок */
+/* * * * * * * * * * */
+/* * Текст кнопок * */
+/* * * * * * * * * */
 .button span{
   color: #f3fdf5;
   font-size: 22px;
@@ -36,11 +30,9 @@ body {
   font-family: 'Bebas Neue', cursive;
 }
 
-
-
-
-
-/* * Круги */
+/* * * * * * */
+/* * Круги * */
+/* * * * * * */
 .green {
   /* position */
   position: absolute;
@@ -81,11 +73,9 @@ body {
   overflow: hidden;
 }
 
-
-
-
-
-/* * Жидкость */
+/* * * * * * * * */
+/* * Жидкость * */
+/* * * * * * * */
 .green .progress .inner .water {
   /* position */
   position: relative;
@@ -114,8 +104,7 @@ body {
   opacity: 50%;
 }
 
-
-/* #green.small{
+#green.small{
   transform: scale(0.3);
   transition: transform 0.15s;
   opacity: 25%;
@@ -125,15 +114,7 @@ body {
   transform: opacity(100%);
   transition: transform 0.15s;
   opacity: 100%;
-} */
-
-
-
-
-
-
-
-
+}
 
 @-webkit-keyframes spin {
   from {
@@ -157,11 +138,9 @@ body {
   }
 }
 
-
-
-
-
-/* Капли */
+/* * * * * * */
+/* * Капли * */
+/* * * * * * */
 .waterdrop-one {
   /* position */
   position: relative;
@@ -280,11 +259,9 @@ body {
   }
 }
 
-
-
-
-
-/* Проценты */
+/* * * * * * * * */
+/* * Проценты * */
+/* * * * * * * */
 #percent{
   /* position */
   position: relative;
@@ -298,11 +275,11 @@ body {
   mix-blend-mode: color-dodge;
 }
 
-
-
-/* * Панели */
-
-/* * Верхняя панель */
+/* * * * * * * */
+/* * Панели * */
+/* * * * * * * * * * * */
+/* * Верхняя панель * */
+/* * * * * * * * * * */
 #panel-top{
   /* position */
   position: relative; 
@@ -397,11 +374,9 @@ body {
   font-size: 20px;
 }
 
-
-
-
-
-/* * Правая панель */
+/* * * * * * * * * * */
+/* * Правая панель * */
+/* * * * * * * * * * */
 #panel-right{
   /* position */
   position: relative; 
@@ -440,7 +415,6 @@ body {
   /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
   transition: none;
 }
-
 
 /* * * * * * * * */
 /* * Кнопка 1 * */
@@ -510,7 +484,6 @@ body {
   font-size: 28px;
 }
 
-
 /* * * * * * * * */
 /* * Кнопка 2 * */
 /* * * * * * * */
@@ -579,11 +552,9 @@ body {
   font-size: 28px;
 }
 
-
-
-
-
-/* * Нижняя панель */
+/* * * * * * * * * * */
+/* * Нижняя панель * */
+/* * * * * * * * * * */
 #panel-bottom{
   /* position */
   position: relative;
@@ -616,7 +587,7 @@ body {
   margin-bottom: -15px;
 }
 
-#panel-bottom #button-detoxic{
+#panel-bottom #button-detox{
   /* position */
   position: relative;
   top: 25%;
@@ -636,7 +607,7 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-bottom:hover #button-detoxic{
+#panel-bottom:hover #button-detox{
   /* position */
   top: 18%;
   height: 30px;
@@ -645,14 +616,14 @@ body {
   border: 0.5px solid #1dd11d;
 }
 
-#panel-bottom #button-detoxic:active{
+#panel-bottom #button-detox:active{
   /* decoration */
   -webkit-box-shadow: 0 6px 0 #1dd11d inset;
   box-shadow: 0 6px 0 #1dd11d inset;
   background-color: #4de94d;
 }
 
-#panel-bottom #button-detoxic span{
+#panel-bottom #button-detox span{
   /* position */
   position: relative;
   top: 0px;
@@ -667,12 +638,12 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-bottom #button-detoxic:hover{
+#panel-bottom #button-detox:hover{
   /* decoration */
   cursor: pointer;
 }
 
-#panel-bottom #button-detoxic:active span{
+#panel-bottom #button-detox:active span{
   /* position */
   top: 6px;
   /* decoration */
@@ -680,11 +651,9 @@ body {
   font-size: 20px;
 }
 
-
-
-
-
-/* * Левая панель */
+/* * * * * * * * * * */
+/* * Левая панель * */
+/* * * * * * * * * */
 #panel-left{
   /* position */
   position: relative; 
@@ -722,8 +691,6 @@ body {
   /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
   transition: none;
 }
-
-
 
 /* * * * * * * * */
 /* * Кнопка 1 * */
@@ -793,7 +760,6 @@ body {
   font-size: 28px;
 }
 
-
 /* * * * * * * * */
 /* * Кнопка 2 * */
 /* * * * * * * */
@@ -826,21 +792,11 @@ body {
   border: 0.5px solid #1dd11d;
 }
 
-#panel-left:hover #button-info:hover{
-  /* decoration */
-  background-color: #0b9216;
-}
-
-#panel-left:hover #button-info:hover span{
-  /* decoration */
-  color: #1dd11d;
-}
-
 #panel-left #button-info:active{
-  /* decoration 
+  /* decoration */
   -webkit-box-shadow: 0 6px 0 #1dd11d inset;
   box-shadow: 0 6px 0 #1dd11d inset;
-  background-color: #4de94d;*/
+  background-color: #4de94d; 
 }
 
 #panel-left #button-info span{
@@ -865,18 +821,16 @@ body {
 }
 
 #panel-left #button-info:active span{
-  /* position 
-  top: 7px;*/
-  /* decoration 
+  /* position */
+  top: 7px;
+  /* decoration */
   color: #d6e0da;
-  font-size: 28px;*/
+  font-size: 28px;
 }
 
-
-
-
-
-/* * Подсказка */
+/* * * * * * * * */
+/* * Подсказка * */
+/* * * * * * * * */
 #popup-info{
   /* position */
   position: relative;
@@ -909,11 +863,9 @@ body {
   opacity: 90%;
 }
 
-
-
-
-
-/* * Центральная кнопка перемещения */
+/* * * * * * * * * * * * * * * * * * * */
+/* * Центральная кнопка перемещения * */
+/* * * * * * * * * * * * * * * * * * */
 #button-holder{
   /* position */
   position: relative;
@@ -927,11 +879,9 @@ body {
   border-radius: 50%;
 }
 
-
-
-
-
-/* * Уменьшение-Увеличение */
+/* * * * * * * * * * * * * * */
+/* * Уменьшение-Увеличение * */
+/* * * * * * * * * * * * * * */
 #green {
   /* animation */
   transition: transform 0.15s;
@@ -984,14 +934,9 @@ body {
   opacity: 0%;
 }
 
-
-
-
-
-
-
-
-/* * Скрытие*/
+/* * * * * * * */
+/* * Скрытие * */
+/* * * * * * * */
 #green {
   /* animation */
   transition: transform 0.15s;
@@ -1006,29 +951,3 @@ body {
 #green.hide #panel-right{
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,3 @@
-
 html, 
 body {
   position: absolute;
@@ -7,28 +6,24 @@ body {
   right: 0px;
   bottom: 0px;
   height: 100%;
-
   /* background-color: #1a1a1a; */
   -moz-user-select: none;
   -khtml-user-select: none;
   user-select: none;
+  /* min-height: 320px; */
 }
 
-
-
-
-
-/* * Font */
+/* * * * * * */
+/* * Font * */
+/* * * * * */
 @font-face {
   font-family: "Bebas Neue";
-  src:url("/BebasNeue-Regular.ttf");
+  src:url("BebasNeue-Regular.ttf");
 }
 
-
-
-
-
-/* * Текст кнопок */
+/* * * * * * * * * * */
+/* * Текст кнопок * */
+/* * * * * * * * * */
 .button span{
   color: #f3fdf5;
   font-size: 22px;
@@ -36,18 +31,16 @@ body {
   font-family: 'Bebas Neue', cursive;
 }
 
-
-
-
-
-/* * Круги */
+/* * * * * * */
+/* * Круги * */
+/* * * * * * */
 .green {
   /* position */
   position: absolute;
   width: 220px;
   height: 220px;
   float: right;
-  top: 35px;
+  top: 55px;
   right: 49px;
 }
 
@@ -71,11 +64,9 @@ body {
   overflow: hidden;
 }
 
-
-
-
-
-/* * Жидкость */
+/* * * * * * * * */
+/* * Жидкость * */
+/* * * * * * * */
 .green .progress .inner .water {
   /* position */
   position: relative;
@@ -104,8 +95,7 @@ body {
   opacity: 50%;
 }
 
-
-/* #green.small{
+#green.small{
   transform: scale(0.3);
   transition: transform 0.15s;
   opacity: 25%;
@@ -115,15 +105,7 @@ body {
   transform: opacity(100%);
   transition: transform 0.15s;
   opacity: 100%;
-} */
-
-
-
-
-
-
-
-
+}
 
 @-webkit-keyframes spin {
   from {
@@ -147,11 +129,9 @@ body {
   }
 }
 
-
-
-
-
-/* Капли */
+/* * * * * * */
+/* * Капли * */
+/* * * * * * */
 .waterdrop-one {
   /* position */
   position: relative;
@@ -270,16 +250,14 @@ body {
   }
 }
 
-
-
-
-
-/* Проценты */
+/* * * * * * * * */
+/* * Проценты * */
+/* * * * * * * */
 #percent{
   /* position */
   position: relative;
   z-index: 666;
-  top: 31%;
+  top: 30%;
   /* decoration */
   text-align: center;
   font-size: 50px;
@@ -288,11 +266,11 @@ body {
   mix-blend-mode: color-dodge;
 }
 
-
-
-/* * Панели */
-
-/* * Верхняя панель */
+/* * * * * * * */
+/* * Панели * */
+/* * * * * * * * * * * */
+/* * Верхняя панель * */
+/* * * * * * * * * * */
 #panel-top{
   /* position */
   position: relative; 
@@ -387,11 +365,9 @@ body {
   font-size: 20px;
 }
 
-
-
-
-
-/* * Правая панель */
+/* * * * * * * * * * */
+/* * Правая панель * */
+/* * * * * * * * * * */
 #panel-right{
   /* position */
   position: relative; 
@@ -401,7 +377,7 @@ body {
   float: right;
   /* top: 66px;
   right: -121px; */
-  top: 63px;
+  top: 64px;
   right: -122px;
   /* decoration */
   outline: none;
@@ -424,13 +400,12 @@ body {
   /* position */
   /* top: 66px;
   right: -196px; */
-  top: 63px;
-  right: -157px;
-  width: 50px;
+  top: 64px;
+  right: -153px;
+  width: 46px;
   /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
   transition: none;
 }
-
 
 /* * * * * * * * */
 /* * Кнопка 1 * */
@@ -489,7 +464,7 @@ body {
 
 #panel-right #button-info:hover{
   /* decoration */
-  cursor: pointer
+  cursor: pointer;
 }
 
 #panel-right #button-info:active span{
@@ -500,12 +475,77 @@ body {
   font-size: 28px;
 }
 
+/* * * * * * * * */
+/* * Кнопка 2 * */
+/* * * * * * * */
+#panel-right #button-hide{
+  /* position */
+  position: relative;
+  float: right;
+  top: -5px;
+  width: 0px;
+  height: 40px;
+  /* decoration */
+  opacity: 0%;
+  text-align: center;
+  border: 0.5px solid #1dd11d00;
+  border-radius: 5px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
 
+#panel-right:hover #button-hide{
+  /* position */
+  right: -4px;
+  width: 40px;
+  /* decoration */
+  opacity: 100%;
+  border: 0.5px solid #1dd11d;
+}
 
+#panel-right #button-hide:active{
+  /* decoration */
+  -webkit-box-shadow: 0 6px 0 #1dd11d inset;
+  box-shadow: 0 6px 0 #1dd11d inset;
+  background-color: #4de94d;
+}
 
+#panel-right #button-hide span{
+  /* position */
+  position: relative;
+  top:0px;
+  /* decoration */
+  color: #f3fdf5;
+  font-weight: bold;
+  font-size: 30px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
 
+#panel-right #button-hide.zoom-out:hover{
+  /* decoration */
+  cursor: zoom-out;
+}
 
-/* * Нижняя панель */
+#panel-right #button-hide:active span{
+  /* position */
+  top: 7px;
+  /* decoration */
+  color: #d6e0da;
+  font-size: 28px;
+}
+
+/* * * * * * * * * * */
+/* * Нижняя панель * */
+/* * * * * * * * * * */
 #panel-bottom{
   /* position */
   position: relative;
@@ -538,7 +578,7 @@ body {
   margin-bottom: -15px;
 }
 
-#panel-bottom #button-detoxic{
+#panel-bottom #button-detox{
   /* position */
   position: relative;
   top: 25%;
@@ -558,7 +598,7 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-bottom:hover #button-detoxic{
+#panel-bottom:hover #button-detox{
   /* position */
   top: 18%;
   height: 30px;
@@ -567,14 +607,14 @@ body {
   border: 0.5px solid #1dd11d;
 }
 
-#panel-bottom #button-detoxic:active{
+#panel-bottom #button-detox:active{
   /* decoration */
   -webkit-box-shadow: 0 6px 0 #1dd11d inset;
   box-shadow: 0 6px 0 #1dd11d inset;
   background-color: #4de94d;
 }
 
-#panel-bottom #button-detoxic span{
+#panel-bottom #button-detox span{
   /* position */
   position: relative;
   top: 0px;
@@ -589,12 +629,12 @@ body {
   transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
 }
 
-#panel-bottom #button-detoxic:hover{
+#panel-bottom #button-detox:hover{
   /* decoration */
   cursor: pointer;
 }
 
-#panel-bottom #button-detoxic:active span{
+#panel-bottom #button-detox:active span{
   /* position */
   top: 6px;
   /* decoration */
@@ -602,11 +642,9 @@ body {
   font-size: 20px;
 }
 
-
-
-
-
-/* * Левая панель */
+/* * * * * * * * * * */
+/* * Левая панель * */
+/* * * * * * * * * */
 #panel-left{
   /* position */
   position: relative; 
@@ -639,13 +677,11 @@ body {
   /* position */
   /* top: 63px; */
   top: 13px;
-  left: -67px;
-  width: 50px;
+  left: -63px;
+  width: 46px;
   /* NOTE Нужно, чтобы не ломалась анимация панели, при увеличении*/
   transition: none;
 }
-
-
 
 /* * * * * * * * */
 /* * Кнопка 1 * */
@@ -715,15 +751,116 @@ body {
   font-size: 28px;
 }
 
+/* * * * * * * * */
+/* * Кнопка 2 * */
+/* * * * * * * */
+#panel-left #button-info{
+  /* position */
+  position: relative;
+  float: left;
+  top: -5px;
+  width: 0px;
+  height: 40px;
+  /* decoration */
+  opacity: 0%;
+  text-align: center;
+  border: 0.5px solid #1dd11d00;
+  border-radius: 5px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
 
+#panel-left:hover #button-info{
+  /* position */
+  left: -4px;
+  width: 40px;
+  /* decoration */
+  opacity: 100%;
+  border: 0.5px solid #1dd11d;
+}
 
+#panel-left #button-info:active{
+  /* decoration */
+  -webkit-box-shadow: 0 6px 0 #1dd11d inset;
+  box-shadow: 0 6px 0 #1dd11d inset;
+  background-color: #4de94d;*/
+}
 
+#panel-left #button-info span{
+  /* position */
+  position: relative;
+  top:0px;
+  /* decoration */
+  color: #f3fdf5;
+  font-weight: bold;
+  font-size: 30px;
+  /* animation */
+  -webkit-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.25s cubic-bezier(.44,.19,.01,1.01);
+}
 
-/* * Центральная кнопка перемещения */
+#panel-left #button-info.zoom-out:hover{
+  /* decoration */
+  cursor: help;
+}
+
+#panel-left #button-info:active span{
+  /* position */
+  top: 7px;
+  /* decoration */
+  color: #d6e0da;
+  font-size: 28px;
+}
+
+/* * * * * * * * */
+/* * Подсказка * */
+/* * * * * * * * */
+#popup-info{
+  /* position */
+  position: relative;
+  z-index: 1001;
+  width: 425px;
+  float: right;
+  top: -169px;
+  right: 40px;
+  padding: 10px;
+  margin: 0 auto;
+  /* decoration */
+  background-color: #1a1a1a8c;
+  color: white;
+  border: solid 5px #53fc53;
+  border-radius: 15px;
+  text-align: left;
+  font-size: 14px;
+  display: none;
+  opacity: 0%;
+  /* animation */
+  -webkit-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  -moz-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  -o-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  -ms-transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+  transition: all 0.5s cubic-bezier(.44,.19,.01,1.01);
+}
+
+#button-info:hover #popup-info{
+  display: inline-block;
+  opacity: 90%;
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/* * Центральная кнопка перемещения * */
+/* * * * * * * * * * * * * * * * * * */
 #button-holder{
   /* position */
   position: relative;
-  z-index: 99;
+  z-index: 777;
   top: -90%;
   height: 180px;
   width: 180px;
@@ -732,3 +869,76 @@ body {
   /* background-color: #e5ff004f; */
   border-radius: 50%;
 }
+
+/* * * * * * * * * * * * * * */
+/* * Уменьшение-Увеличение * */
+/* * * * * * * * * * * * * * */
+#green {
+  /* animation */
+  transition: transform 0.15s;
+}
+
+#green.small{
+  transform: scale(0.3);
+  transition: transform 0.15s;
+  opacity: 25%;
+}
+
+#green.small:hover{
+  transform: opacity(100%);
+  transition: transform 0.15s;
+  opacity: 100%;
+}
+
+#green.small #panel-top{
+  display: none;
+}
+
+#green.small #panel-right{
+  right: -31px;
+  /* NOTE Нужно, чтобы не ломалась анимация панели, при уменьшении*/
+  transition: transform 0s;
+}
+
+#green.small #panel-right:hover{
+  right: -106px;
+}
+
+#green.small #panel-bottom{
+  display: none;
+}
+
+#green.small #panel-left{
+  display: none;
+}
+
+#green.small #panel-right #button-info{
+  display: none;
+}
+
+#green.small #panel-right:hover{
+  right: -66px;
+  width: 50px;
+}
+
+#green.small #percent{
+  opacity: 0%;
+}
+
+/* * * * * * * */
+/* * Скрытие * */
+/* * * * * * * */
+#green {
+  /* animation */
+  transition: transform 0.15s;
+}
+
+#green.hide{
+  transform: scale(0.1);
+  opacity: 15%;
+  /* pointer-events: none; */
+}
+
+#green.hide #panel-right{
+  display: none;
+}  
